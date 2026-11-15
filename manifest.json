@@ -1,0 +1,32 @@
+{
+    "content_scripts": [
+        {
+            "all_frames": false,
+            "css": [
+                "src/content.css"
+            ],
+            "js": [
+                "src/content.js"
+            ],
+            "matches": [
+                "https://www.reddit.com/r/*",
+                "https://old.reddit.com/r/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "description": "Restores subreddit stats in-page on reddit.com: subscribers, weekly visitors, and contributions. Reddit removed the public member count on Sept 9, 2025; this puts the numbers back where they were.",
+    "host_permissions": [
+        "https://www.reddit.com/*",
+        "https://old.reddit.com/*"
+    ],
+    "icons": {
+        "128": "icons/icon128.png",
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png"
+    },
+    "manifest_version": 3,
+    "name": "Reddit Stats Restored",
+    "version": "0.1.0"
+}

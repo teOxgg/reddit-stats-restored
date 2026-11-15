@@ -1,0 +1,103 @@
+/* Reddit Stats Restored — in-page card. Keeps Reddit's look: neutral panel,
+   orange accent, compact numbers. Works in light and dark mode. */
+
+#reddit-stats-restored.rsr-card {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--rsr-border, #e5e7eb);
+  border-radius: 12px;
+  background: var(--rsr-bg, #fff);
+  color: var(--rsr-text, #1a1a1b);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Old reddit: the sidebar is narrow and the card sits under the titlebox. */
+.side #reddit-stats-restored.rsr-card {
+  margin: 10px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  #reddit-stats-restored.rsr-card {
+    --rsr-border: #343536;
+    --rsr-bg: #1a1a1b;
+    --rsr-text: #d7dadc;
+    --rsr-muted: #818384;
+  }
+}
+
+#reddit-stats-restored .rsr-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#reddit-stats-restored .rsr-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+#reddit-stats-restored .rsr-refresh {
+  appearance: none;
+  border: 1px solid var(--rsr-border, #e5e7eb);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--rsr-text, #1a1a1b);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+
+#reddit-stats-restored .rsr-refresh:hover {
+  border-color: #ff4500;
+  color: #ff4500;
+}
+
+#reddit-stats-restored .rsr-refresh:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#reddit-stats-restored .rsr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+#reddit-stats-restored .rsr-cell {
+  min-width: 0;
+  text-align: left;
+}
+
+#reddit-stats-restored .rsr-num {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#reddit-stats-restored .rsr-label {
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--rsr-muted, #7c7c7c);
+  margin-top: 2px;
+}
+
+#reddit-stats-restored .rsr-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rsr-border, #e5e7eb);
+  font-size: 11px;
+  color: var(--rsr-muted, #7c7c7c);
+}
